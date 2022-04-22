@@ -2,17 +2,19 @@
 /public/hot
 /public/storage
 /public/vendor/statamic
+/public/img/
+/public/static/
 /storage/*.key
 /vendor
 .env
 .env.backup
 .phpunit.result.cache
-.php_cs.cache
-docker-compose.override.yml
+.antlers.json
 Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-.DS_Store
-/.idea
-/.vscode
+# Comment the following lines if you don't compile your assets on the server:
+/public/js/
+/public/css/
+/public/mix-manifest.json

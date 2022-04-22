@@ -7,13 +7,13 @@ return [
     | Version
     |--------------------------------------------------------------------------
     |
-    | The desired Antlers language version to utilize. Possible values are:
+    | The desired Antlers language version to utilize. Possibly values are:
     |   - regex: Utilize pre-3.3 Antlers. Appropriate for existing sites.
     |   - runtime: Utilizes >= 3.3 Antlers, recommended for new sites.
     |
     */
 
-    'version' => 'regex',
+    'version' => 'runtime',
 
     /*
     |--------------------------------------------------------------------------

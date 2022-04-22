@@ -39,7 +39,7 @@ return [
         |
         */
 
-        'driver' => 'gd',
+        'driver' => env('IMAGE_MANIPULATION_DRIVER', 'gd'),
 
         /*
         |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
         |
         */
 
-        'cache' => false,
+        'cache' => env('SAVE_CACHED_IMAGES', true),
         'cache_path' => public_path('img'),
 
         /*
@@ -67,7 +67,18 @@ return [
         */
 
         'presets' => [
-            // 'small' => ['w' => 200, 'h' => 200, 'q' => 75, 'fit' => 'crop'],
+            'xs-webp' => ['w' => 320, 'h' => 10000, 'q' => 85, 'fit' => 'contain', 'fm' => 'webp'],
+            'sm-webp' => ['w' => 480, 'h' => 10000, 'q' => 85, 'fit' => 'contain', 'fm' => 'webp'],
+            'md-webp' => ['w' => 768, 'h' => 10000, 'q' => 85, 'fit' => 'contain', 'fm' => 'webp'],
+            'lg-webp' => ['w' => 1280, 'h' => 10000, 'q' => 85, 'fit' => 'contain', 'fm' => 'webp'],
+            'xl-webp' => ['w' => 1440, 'h' => 10000, 'q' => 95, 'fit' => 'contain', 'fm' => 'webp'],
+            '2xl-webp' => ['w' => 1680, 'h' => 10000, 'q' => 95, 'fit' => 'contain', 'fm' => 'webp'],
+            'xs' => ['w' => 320, 'h' => 10000, 'q' => 85, 'fit' => 'contain'],
+            'sm' => ['w' => 480, 'h' => 10000, 'q' => 85, 'fit' => 'contain'],
+            'md' => ['w' => 768, 'h' => 10000, 'q' => 85, 'fit' => 'contain'],
+            'lg' => ['w' => 1280, 'h' => 10000, 'q' => 85, 'fit' => 'contain'],
+            'xl' => ['w' => 1440, 'h' => 10000, 'q' => 95, 'fit' => 'contain'],
+            '2xl' => ['w' => 1680, 'h' => 10000, 'q' => 95, 'fit' => 'contain'],
         ],
 
     ],
@@ -128,16 +139,4 @@ return [
 
     'cache_meta' => true,
 
-    /*
-    |--------------------------------------------------------------------------
-    | Focal Point Editor
-    |--------------------------------------------------------------------------
-    |
-    | When editing images in the Control Panel, there is an option to choose
-    | a focal point. When working with third-party image providers such as
-    | Cloudinary it can be useful to disable Statamic's built-in editor.
-    |
-    */
-
-    'focal_point_editor' => true,
 ];
