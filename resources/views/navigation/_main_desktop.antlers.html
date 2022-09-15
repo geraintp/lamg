@@ -1,11 +1,11 @@
 {{#
 	@name Main desktop navigation
-	@desc The sites main desktop navigation rendered on each page. It's 2 levels deep by default and uses AlpineJS for interactivity.
+	@desc The sites main desktop navigation rendered on each page. It\'s 2 levels deep by default and uses AlpineJS for interactivity.
 #}}
 
 <!-- /navigation/_main_desktop.antlers.html -->
 <nav class="hidden md:block" aria-label="{{ trans:strings.main_navigation }}">
-    <ul class="flex items-center space-x-8">
+    <ul class="flex items-center md:ml-10 md:pr-3 space-x-8">
         {{ nav:main max_depth="2" include_home="true" }}
             <li
                 {{ if children }}
@@ -18,9 +18,9 @@
             >
                 <a
                     class="
-                        p-1 -m-1 flex items-center font-bold text-xs uppercase tracking-wide hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary
+                        p-1 -m-1 flex items-center font-bold text-xs uppercase tracking-wide hover:text-grey-900 focus:outline-none focus-visible:ring-2 ring-white
                         {{ is_current || is_parent
-                            ? 'text-primary'
+                            ? 'text-white'
                             : 'text-neutral' }}
                     "
                     {{ if children }}

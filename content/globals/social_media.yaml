@@ -2,17 +2,22 @@ title: 'Social media'
 data:
   social_media:
     -
-      handle: studio1902
-      prefix: 'https://www.twitter.com/'
-      type: twitter
+      handle: groups/1507268706176172
+      prefix: 'https://www.facebook.com/'
+      type: facebook
       enabled: true
     -
-      handle: studio1902/statamic-peak
-      prefix: 'https://www.github.com/'
-      type: github
+      handle: LAMG_IAM
+      prefix: 'https://www.twitter.com/'
+      type: twitter
       enabled: true
     -
       handle: in/robdekort/
       prefix: 'https://www.linkedin.com/'
       type: linkedin
+      enabled: true
+    -
+      handle: groups/1507268706176172/
+      prefix: 'https://www.facebook.com/'
+      type: facebook
       enabled: true
