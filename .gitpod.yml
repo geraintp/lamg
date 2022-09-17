@@ -4,13 +4,12 @@
 
 tasks:
   - init: >
-      mysql -u root -e "create database laravel" &&
+      touch database/database.sqlite &&
       cp .env.example .env &&
-      sed -i "s|APP_URL=|APP_URL=${GITPOD_WORKSPACE_URL}|g" .env &&
-      sed -i "s|APP_URL=https://|APP_URL=https://8000-|g" .env &&
+      sed -i "s|APP_URL=|APP_URL=https://8000-${GITPOD_WORKSPACE_URL}|g" .env &&
       composer install &&
-      php artisan key:generate &&
-      php artisan migrate:fresh --seed
+      php artisan key:generate &&  
+    # php artisan migrate:fresh --seed
     command: php -S 0.0.0.0:8000 -t public
   - init: npm install
     command: npm run watch-poll
@@ -20,5 +19,5 @@ ports:
   - port: 8000
     onOpen: open-preview
   # MySQL server
-  - port: 3306
-    onOpen: ignore
+  # - port: 3306
+  #   onOpen: ignore
