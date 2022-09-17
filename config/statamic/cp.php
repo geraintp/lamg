@@ -96,7 +96,7 @@ return [
     |
     */
 
-    'support_url' => env('STATAMIC_SUPPORT_URL', 'https://statamic.com/support'),
+    'support_url' => env('STATAMIC_SUPPORT_URL', 'https://www.kaweb.co.uk/support'),
 
      /*
     |--------------------------------------------------------------------------
