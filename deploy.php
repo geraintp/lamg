@@ -11,17 +11,22 @@ set('application', 'lamg');
 set('repository', 'git@github.com:geraintp/lamg.git');
 set('php_fpm_version', '8.1');
 set('slack_webhook', 'https://hooks.slack.com/services/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');
+set('keep_releases', 3);
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true); 
+set('http_user', 'www-data');
+set('writable_mode', 'chown');
 
 // Shared files/dirs between deploys 
 // add('shared_files', []);
 // add('shared_dirs', []);
 
 // Writable dirs by web server 
-// add('writable_dirs', []);
+add('writable_dirs', ['./storage/framework/cache/data/stache/']);
 set('allow_anonymous_stats', false);
+
+add('copy_dirs', ['./vendors', './node_modules']);
 
 // Hosts
 
@@ -36,6 +41,10 @@ task('nginx:restart', function () {
     run('service nginx restart');
 });
 
+task('npm:install', function(){
+    run('cd {{release_path}} && {{bin/npm}} ic --no-optional');
+});
+
 task('npm:run:prod', function () {
     cd('{{release_path}}');
     run('{{bin/npm}} run production');
@@ -43,6 +52,17 @@ task('npm:run:prod', function () {
 
 task('npm:run:dev', function () {
     run('cd {{release_path}} && {{bin/npm}} run dev');
+});
+
+task('npm:cache:clean', function(){
+    run('cd {{release_path}} && {{bin/npm}} cache clean --force');
+});
+
+task('fix:perms', function() {
+    cd('{{release_or_current_path}}');
+    run('chown -R www-data:www-data .');
+    cd('{{release_or_current_path}}/storage');
+    run('chown -R www-data:www-data .');
 });
 
 desc('Show the content of the app directory.');
@@ -54,6 +74,7 @@ task('app:directory', function () {
 
 task('deploy', [
     'deploy:prepare',
+    'deploy:copy_dirs',
     'deploy:vendors',
     'artisan:storage:link',
     'artisan:view:cache',
@@ -64,6 +85,8 @@ task('deploy', [
 
     'statamic:stache:clear',
     'statamic:stache:warm',
+    
+    'fix:perms',
     'deploy:publish',
     // 'php-fpm:reload',
 ]);
