@@ -1,6 +1,9 @@
 <?php
 namespace Deployer;
 
+require __DIR__ . '/vendor/autoload.php';
+
+require 'recipe/common.php';
 require 'recipe/statamic.php';
 require 'contrib/php-fpm.php';
 require 'contrib/npm.php';
@@ -10,7 +13,6 @@ require 'contrib/slack.php';
 set('application', 'lamg');
 set('repository', 'git@github.com:geraintp/lamg.git');
 set('php_fpm_version', '8.1');
-set('slack_webhook', 'https://hooks.slack.com/services/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');
 set('keep_releases', 3);
 
 // [Optional] Allocate tty for git clone. Default value is false.
@@ -36,6 +38,17 @@ host('prod')
     ->set('deploy_path', '/var/www/test.amseru.uk');    
     
 // Tasks
+task('load:env', function() {
+    $environment = run('cat {{deploy_path}}/shared/.env');
+
+    $env = \Dotenv\Dotenv::parse($environment);
+    var_dump($env['DEPLOY_SLACK_WEB_HOOK']);
+    if (array_key_exists('DEPLOY_SLACK_WEB_HOOK', $env)) {
+        set('slack_webhook', $env['DEPLOY_SLACK_WEB_HOOK']);
+    }
+})->desc('Load DotEnv values');
+before('slack:notify', 'load:env');
+
 
 task('nginx:restart', function () {
     run('service nginx restart');

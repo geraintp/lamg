@@ -10,7 +10,6 @@
     "type": "project",
     "require": {
         "php": "^8.0",
-        "deployer/deployer": "^7.0",
         "fruitcake/laravel-cors": "^2.0.5",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.0",
@@ -20,12 +19,14 @@
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
+        "deployer/deployer": "^7.0",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.13",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
-        "spatie/laravel-ignition": "^1.0"
+        "spatie/laravel-ignition": "^1.0",
+        "vlucas/phpdotenv": "^5.5"
     },
     "config": {
         "optimize-autoloader": true,
