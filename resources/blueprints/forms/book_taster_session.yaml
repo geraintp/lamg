@@ -1,0 +1,80 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: first_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'First Name'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+          width: 50
+      -
+        handle: last_name
+        field:
+          input_type: text
+          antlers: false
+          display: 'Last Name'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+          width: 50
+      -
+        handle: email_address
+        field:
+          input_type: email
+          antlers: false
+          display: 'Email Address'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+            - email
+          width: 50
+      -
+        handle: contact_number
+        field:
+          input_type: tel
+          character_limit: 14
+          antlers: false
+          display: 'Contact Number'
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+            - numeric
+          width: 50
+      -
+        handle: local_area
+        field:
+          placeholder: 'Enter a place name, e.g. Lichfield'
+          input_type: text
+          character_limit: 20
+          antlers: false
+          display: 'Local Area'
+          type: text
+          icon: text
+          instructions: 'Let us know where you are so we can find a member closer to you'
+          listable: hidden
+          instructions_position: above
+          read_only: false
+          validate:
+            - required
+            - string

@@ -17,6 +17,8 @@ return [
 
     'name' => env('APP_NAME', 'Statamic'),
 
+    'logo' => env('APP_LOGO', 'https://cdn.studio1902.nl/assets/statamic-peak/statamic-peak-logo.png'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

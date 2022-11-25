@@ -10,7 +10,10 @@
         {{# {{ partial:navigation/main }} #}}
     {{# </div>
 </header> #}}
-
-{{ partial:headers/default }}
+{{ if (is_homepage) }}
+    {{ partial:headers/home }}
+{{ else }}
+    {{ partial:headers/default }}
+{{ endif }}
 <!-- End: /layout/_header.antlers.html -->
 
