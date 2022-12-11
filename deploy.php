@@ -19,6 +19,7 @@ set('keep_releases', 3);
 set('git_tty', true); 
 set('http_user', 'www-data');
 set('writable_mode', 'chown');
+set('update_code_strategy', 'clone');
 
 // Shared files/dirs between deploys 
 // add('shared_files', []);
