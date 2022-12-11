@@ -2,8 +2,8 @@
 id: home
 blueprint: page
 title: Home
-updated_by: 80802917-8d90-4324-9d46-03c0930abb63
-updated_at: 1636186813
+updated_by: 9549fed7-96c8-4795-8adc-91c7bc086280
+updated_at: 1668811599
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -19,75 +19,55 @@ page_builder:
         content:
           -
             type: text
-            text: 'Start out on top'
+            text: 'Be the Best'
       -
         type: paragraph
         content:
           -
             type: text
-            text: 'Peak is your personal bespoke development sherpa. Start every project with this kit full of development goodies. '
-      -
-        type: paragraph
-        content:
+            text: 'As an official provider of IAM RoadSmart courses, our aim is to develop your riding skills to be '
           -
             type: text
-            text: 'But beware, this kit ain''t here to be pretty. There are some examples of what Peak can do, but the rest is up to you. '
-      -
-        type: paragraph
-        content:
+            marks:
+              -
+                type: bold
+            text: 'the best of your ability'
           -
             type: text
-            text: 'Get climbing!'
+            text: '. '
+      -
+        type: paragraph
     type: article
     enabled: true
   -
-    title: Features
     link_blocks:
       -
-        title: 'Check out a form'
-        text: 'Peak renders forms and mail templates dynamically so you can add as many forms as you''d like, just by creating them in the CP. Peak ships with a default basic contact form you can edit.'
-        label: 'Send a form'
+        title: 'Taster Session'
+        text: 'Why not try a free taster session? Your initial taster riding assessment is free so that you can experience first hand what Advanced Riding is all about before making any commitment to join us.'
+        label: 'Request now'
         target_blank: false
         link_type: entry
-        entry: 5c526dbf-9dd7-4c52-98d8-54e00ebddfb6
-        url: null
-        email: null
-        tel: null
-        asset: null
-        button_type: inline
-        attr_title: null
-        attr_aria: null
-        show_controls: false
+        entry: 9f2be14f-5dba-47ac-a3e3-5de1dfa62633
+        button_type: button
+        show_controls: true
       -
-        title: 'Long form content'
-        text: 'For long form content you can use the Article content block. This is a Bard fieldtypeopen in new window with multiple sets of fields that are regularly used in longer articles.'
-        label: 'Read an article'
+        title: Events
+        text: 'Beginning of the month meetings, (BoMM), Mid month Runs (MMR), Rideouts, social events and more.'
+        label: 'See what''s happening'
+        show_controls: true
         target_blank: false
         link_type: entry
-        entry: 20f6a148-63b8-47a8-9b0e-d57095d78c21
-        url: null
-        email: null
-        tel: null
-        asset: null
-        button_type: inline
-        attr_title: null
-        attr_aria: null
-        show_controls: false
+        entry: f810ad73-4126-4777-8941-f47652837a9c
+        button_type: button
       -
-        title: 'Way more features'
-        text: 'Professional SEO, social image generation, responsive assets, appearance globals, favicons generation, search templates, dark mode support with toggle, pagination template, search and additional bottles of oxygen.'
-        label: 'Scavenge the docs'
+        title: 'Advanced Rider Course'
+        text: 'Learn more about the IAM RoadSmart advanced rider course'
+        label: 'Learn more'
+        show_controls: true
         target_blank: true
         link_type: url
-        entry: null
-        url: 'https://peak.studio1902.nl/'
-        email: null
-        tel: null
-        asset: null
-        button_type: inline
-        attr_title: null
-        attr_aria: null
-        show_controls: false
+        url: 'https://www.iamroadsmart.com/courses/advanced-rider'
+        button_type: button
     type: link_blocks
     enabled: true
 ---
