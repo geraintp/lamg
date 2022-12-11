@@ -1,9 +1,10 @@
 ---
 id: 20f6a148-63b8-47a8-9b0e-d57095d78c21
+published: false
 blueprint: page
 title: 'Long form content'
-updated_by: 66c6ff90-a9a2-42ba-a4e1-c0872e344786
-updated_at: 1645555803
+updated_by: 9549fed7-96c8-4795-8adc-91c7bc086280
+updated_at: 1669405353
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -230,30 +231,12 @@ page_builder:
             buttons:
               -
                 label: 'Lorem ipsum'
-                target_blank: true
-                link_type: url
-                entry: null
-                url: 'https://www.youtube.com/watch?v=o-YBDTqX_ZU'
-                email: null
-                tel: null
-                asset: null
-                button_type: button
-                attr_title: null
-                attr_aria: null
                 show_controls: false
+                target_blank: false
               -
                 label: 'Dolor sit amet'
-                target_blank: false
-                link_type: entry
-                entry: home
-                url: null
-                email: null
-                tel: null
-                asset: null
-                button_type: button
-                attr_title: null
-                attr_aria: null
                 show_controls: false
+                target_blank: false
       -
         type: paragraph
     type: article
