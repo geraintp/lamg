@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class DynamicToken extends Controller
@@ -11,7 +12,7 @@ class DynamicToken extends Controller
      *
      * @return string
      */
-    public function getRefresh(Request $request)
+    public function getRefresh(Request $request): JsonResponse
     {
         $referer = request()->headers->get('referer');
         $contains = str_contains($referer, request()->getHttpHost());

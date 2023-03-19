@@ -48,7 +48,7 @@ class AddSet extends Command
      *
      * @return bool|null
      */
-    public function handle()
+    public function handle(): int
     {
         $this->set_name = $this->ask('What should be the name for this set?');
         $this->filename = Stringy::slugify($this->set_name, '_', Config::getShortLocale());
@@ -72,7 +72,7 @@ class AddSet extends Command
      *
      * @return bool|null
      */
-    protected function checkExistence($type, $path)
+    protected function checkExistence($type, $path): ?bool
     {
         if (File::exists(base_path($path))) {
             throw new \Exception("{$type} '{$path}' already exists.");
@@ -84,7 +84,7 @@ class AddSet extends Command
      *
      * @return bool|null
      */
-    protected function createFieldset()
+    protected function createFieldset(): ?bool
     {
         $stub = File::get(__DIR__.'/stubs/fieldset_set.yaml.stub');
         $contents = Str::of($stub)
@@ -98,7 +98,7 @@ class AddSet extends Command
      *
      * @return bool|null
      */
-    protected function createPartial()
+    protected function createPartial(): ?bool
     {
         $stub = File::get(__DIR__.'/stubs/set.html.stub');
         $contents = Str::of($stub)
@@ -113,7 +113,7 @@ class AddSet extends Command
      *
      * @return bool|null
      */
-    protected function updatePageBuilder()
+    protected function updatePageBuilder(): ?bool
     {
         $fieldset = Yaml::parseFile(base_path('resources/fieldsets/article.yaml'));
         $newSet = [

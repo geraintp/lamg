@@ -24,7 +24,7 @@ class GenerateSocialImages extends Action
      *
      * @return bool
      */
-    public function visibleTo($item)
+    public function visibleTo($item): bool
     {
         return $item instanceof EntryInstance && in_array($item->collectionHandle(), $this->available_collections);
     }
@@ -34,7 +34,7 @@ class GenerateSocialImages extends Action
      *
      * @return bool
      */
-    public function authorize($user, $item)
+    public function authorize($user, $item): bool
     {
         return $user->can('edit', $item);
     }
@@ -44,7 +44,7 @@ class GenerateSocialImages extends Action
      *
      * @return void
      */
-    public function run($items, $values)
+    public function run($items, $values): void
     {
         GenerateSocialImagesJob::dispatch($items);
 

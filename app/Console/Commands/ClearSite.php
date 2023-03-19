@@ -35,7 +35,7 @@ class ClearSite extends Command
      *
      * @return bool|null
      */
-    public function handle()
+    public function handle(): ?bool
     {
         $clear_site = ($this->confirm('Are you sure you want to clear all default Peak content?', true)) ? true : false;
 
@@ -58,7 +58,7 @@ class ClearSite extends Command
      *
      * @return bool|null
      */
-    protected function trashAssets()
+    protected function trashAssets(): ?bool
     {
         $files = new Filesystem;
         $path = public_path('assets');
@@ -72,7 +72,7 @@ class ClearSite extends Command
      *
      * @return bool|null
      */
-    protected function clearGlobalSocialMedia()
+    protected function clearGlobalSocialMedia(): ?bool
     {
         $set = GlobalSet::findByHandle('social_media');
         $set->inDefaultSite()->set('social_media', null)->save();
@@ -83,7 +83,7 @@ class ClearSite extends Command
      *
      * @return bool|null
      */
-    protected function clearPageBuilder($uri)
+    protected function clearPageBuilder($uri): ?bool
     {
         Entry::findByUri($uri)
             ->set('page_builder', null)
@@ -95,7 +95,7 @@ class ClearSite extends Command
      *
      * @return bool|null
      */
-    protected function trashPagesButHomeAnd404()
+    protected function trashPagesButHomeAnd404(): ?bool
     {
         $pages = Entry::query()
             ->where('collection', 'pages')
@@ -116,7 +116,7 @@ class ClearSite extends Command
      *
      * @return bool|null
      */
-    protected function clearNavigation()
+    protected function clearNavigation(): ?bool
     {
         $navigation = Yaml::parseFile(base_path('content/trees/navigation/main.yaml'));
         $tree = Arr::get($navigation, 'tree');

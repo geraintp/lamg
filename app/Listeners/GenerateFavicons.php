@@ -26,7 +26,7 @@ class GenerateFavicons
      * @param  GlobalSetSaved  $event
      * @return void
      */
-    public function handle(GlobalSetSaved $event)
+    public function handle(GlobalSetSaved $event): void
     {
         /** @var GlobalSet $globals */
         $globals = $event->globals;

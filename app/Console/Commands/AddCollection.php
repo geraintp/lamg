@@ -155,7 +155,7 @@ class AddCollection extends Command
      *
      * @return bool|null
      */
-    public function handle()
+    public function handle(): int
     {
         $this->collection_name = $this->ask('What should be the name for this collection?');
         $this->filename = Str::slug($this->collection_name, '_');
@@ -219,7 +219,7 @@ class AddCollection extends Command
      *
      * @return bool|null
      */
-    protected function checkExistence($type, $path)
+    protected function checkExistence($type, $path): ?bool
     {
         if (File::exists(base_path($path))) {
             throw new \Exception("$type '{$path}' already exists.");
@@ -231,7 +231,7 @@ class AddCollection extends Command
      *
      * @return array
      */
-    protected function getPages()
+    protected function getPages(): array
     {
         return Entry::query()
             ->where('collection', 'pages')
@@ -248,7 +248,7 @@ class AddCollection extends Command
      *
      * @return bool|null
      */
-    protected function createCollection()
+    protected function createCollection(): ?bool
     {
         $this->checkExistence('Collection', "content/collections/{$this->filename}.yaml");
 
@@ -273,7 +273,7 @@ class AddCollection extends Command
      *
      * @return bool|null
      */
-    protected function createBlueprint()
+    protected function createBlueprint(): ?bool
     {
         $this->checkExistence('Blueprint', "resources/blueprints/collections/{$this->filename}/{$this->filename}.yaml");
 
@@ -297,7 +297,7 @@ class AddCollection extends Command
      *
      * @return bool|null
      */
-    protected function createDirectory($directory)
+    protected function createDirectory($directory): ?bool
     {
         File::makeDirectory($directory);
     }
@@ -307,7 +307,7 @@ class AddCollection extends Command
      *
      * @return bool|null
      */
-    protected function createIndexTemplate()
+    protected function createIndexTemplate(): ?bool
     {
         $this->checkExistence('Template', "resources/views/{$this->filename}/index.antlers.html");
 
@@ -326,7 +326,7 @@ class AddCollection extends Command
      *
      * @return bool|null
      */
-    protected function createShowTemplate()
+    protected function createShowTemplate(): ?bool
     {
         $this->checkExistence('Template', "resources/views/{$this->filename}/show.antlers.html");
 
@@ -343,7 +343,7 @@ class AddCollection extends Command
      *
      * @return string
      */
-    protected function addPage()
+    protected function addPage(): string
     {
         $entry = Entry::make()
             ->collection('pages')
@@ -360,7 +360,7 @@ class AddCollection extends Command
      *
      * @return bool|null
      */
-    protected function setIndexTemplate($id)
+    protected function setIndexTemplate($id): ?bool
     {
         Entry::find($id)
             ->set('template', "{$this->filename}/index")
@@ -372,7 +372,7 @@ class AddCollection extends Command
      *
      * @return bool|null
      */
-    protected function grantPermissionsToEditor()
+    protected function grantPermissionsToEditor(): ?bool
     {
         $roles = Yaml::parseFile(base_path('resources/users/roles.yaml'));
         $newPermissions = [

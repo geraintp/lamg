@@ -55,7 +55,7 @@ class AddBlock extends Command
      *
      * @return bool|null
      */
-    public function handle()
+    public function handle(): int
     {
         $this->block_name = $this->ask('What should be the name for this block?');
         $this->filename = Stringy::slugify($this->block_name, '_', Config::getShortLocale());
@@ -80,7 +80,7 @@ class AddBlock extends Command
      *
      * @return bool|null
      */
-    protected function checkExistence($type, $path)
+    protected function checkExistence($type, $path): ?bool
     {
         if (File::exists(base_path($path))) {
             throw new \Exception("{$type} '{$path}' already exists.");
@@ -92,7 +92,7 @@ class AddBlock extends Command
      *
      * @return bool|null
      */
-    protected function createFieldset()
+    protected function createFieldset(): ?bool
     {
         $stub = File::get(__DIR__.'/stubs/fieldset_block.yaml.stub');
         $contents = Str::of($stub)
@@ -106,7 +106,7 @@ class AddBlock extends Command
      *
      * @return bool|null
      */
-    protected function createPartial()
+    protected function createPartial(): ?bool
     {
         $stub = File::get(__DIR__.'/stubs/block.html.stub');
         $contents = Str::of($stub)
@@ -121,7 +121,7 @@ class AddBlock extends Command
      *
      * @return bool|null
      */
-    protected function updatePageBuilder()
+    protected function updatePageBuilder(): ?bool
     {
         $fieldset = Yaml::parseFile(base_path('resources/fieldsets/page_builder.yaml'));
         $newSet = [

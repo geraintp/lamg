@@ -33,7 +33,7 @@ class GenerateSocialImagesJob implements ShouldQueue
      *
      * @return void
      */
-    public function handle()
+    public function handle(): void
     {
         $this->items->each(function ($item, $key) {
             $container = AssetContainer::find('social_images');

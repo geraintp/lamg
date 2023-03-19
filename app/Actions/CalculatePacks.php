@@ -125,7 +125,7 @@ class Pack
      *
      * @return void
      */
-    public function toArray()
+    public function toArray(): void
     {
         return ['size' => $this->size, 'qty' => $this->qty];
     }
