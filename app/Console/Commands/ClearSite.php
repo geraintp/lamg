@@ -17,20 +17,20 @@ class ClearSite extends Command
     use RunsInPlease;
 
     /**
-    * The name of the console command.
-    *
-    * @var string
-    */
+     * The name of the console command.
+     *
+     * @var string
+     */
     protected $name = 'peak:clear-site';
 
-     /**
+    /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = "Clear all default Peak content.";
+    protected $description = 'Clear all default Peak content.';
 
-     /**
+    /**
      * Execute the console command.
      *
      * @return bool|null
@@ -49,7 +49,7 @@ class ClearSite extends Command
             Artisan::call('statamic:glide:clear');
             Artisan::call('cache:clear');
 
-            $this->info("Your view from the peak is clear.");
+            $this->info('Your view from the peak is clear.');
         }
     }
 
@@ -62,11 +62,12 @@ class ClearSite extends Command
     {
         $files = new Filesystem;
         $path = public_path('assets');
-        if ($files->exists($path))
+        if ($files->exists($path)) {
             $files->cleanDirectory($path);
+        }
     }
 
-     /**
+    /**
      * Trash global social media data.
      *
      * @return bool|null
@@ -104,8 +105,9 @@ class ClearSite extends Command
 
         foreach ($pages as $page) {
             $file_path = base_path("content/collections/pages/{$page->slug()}.md");
-            if (File::exists($file_path))
+            if (File::exists($file_path)) {
                 File::delete($file_path);
+            }
         }
     }
 
