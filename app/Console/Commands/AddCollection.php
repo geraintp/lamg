@@ -152,8 +152,6 @@ class AddCollection extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return bool|null
      */
     public function handle(): int
     {
@@ -216,8 +214,6 @@ class AddCollection extends Command
 
     /**
      * Check if a file doesn't already exist.
-     *
-     * @return bool|null
      */
     protected function checkExistence($type, $path): ?bool
     {
@@ -228,8 +224,6 @@ class AddCollection extends Command
 
     /**
      * Get all pages.
-     *
-     * @return array
      */
     protected function getPages(): array
     {
@@ -245,8 +239,6 @@ class AddCollection extends Command
 
     /**
      * Create fieldset.
-     *
-     * @return bool|null
      */
     protected function createCollection(): ?bool
     {
@@ -270,8 +262,6 @@ class AddCollection extends Command
 
     /**
      * Create blueprints.
-     *
-     * @return bool|null
      */
     protected function createBlueprint(): ?bool
     {
@@ -294,8 +284,6 @@ class AddCollection extends Command
 
     /**
      * Create dir.
-     *
-     * @return bool|null
      */
     protected function createDirectory($directory): ?bool
     {
@@ -304,8 +292,6 @@ class AddCollection extends Command
 
     /**
      * Create index template.
-     *
-     * @return bool|null
      */
     protected function createIndexTemplate(): ?bool
     {
@@ -323,8 +309,6 @@ class AddCollection extends Command
 
     /**
      * Create index template.
-     *
-     * @return bool|null
      */
     protected function createShowTemplate(): ?bool
     {
@@ -340,8 +324,6 @@ class AddCollection extends Command
 
     /**
      * Add a page.
-     *
-     * @return string
      */
     protected function addPage(): string
     {
@@ -357,8 +339,6 @@ class AddCollection extends Command
 
     /**
      * Set index template.
-     *
-     * @return bool|null
      */
     protected function setIndexTemplate($id): ?bool
     {
@@ -369,8 +349,6 @@ class AddCollection extends Command
 
     /**
      * Grant permissions to editor.
-     *
-     * @return bool|null
      */
     protected function grantPermissionsToEditor(): ?bool
     {

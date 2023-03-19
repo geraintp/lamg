@@ -9,8 +9,6 @@ class DynamicToken extends Controller
 {
     /**
      * Get refreshed CSRF token.
-     *
-     * @return string
      */
     public function getRefresh(Request $request): JsonResponse
     {

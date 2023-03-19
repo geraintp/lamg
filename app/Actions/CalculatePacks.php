@@ -51,9 +51,6 @@ class Pack
 {
     /**
      * Undocumented function
-     *
-     * @param  int  $size
-     * @param  int  $qty
      */
     public function __construct(public readonly int $size, public int $qty = 0)
     {
@@ -61,10 +58,6 @@ class Pack
 
     /**
      * Undocumented function
-     *
-     * @param  int  $size
-     * @param  int  $qty
-     * @return self
      */
     public static function make(int $size, int $qty = 0): self
     {
@@ -73,9 +66,6 @@ class Pack
 
     /**
      * Increments The Pack qty.
-     *
-     * @param  int  $amount
-     * @return self
      */
     public function increment(int $amount = 1): self
     {
@@ -86,9 +76,6 @@ class Pack
 
     /**
      * Decrements the Pack qty.
-     *
-     * @param  int  $amount
-     * @return self
      */
     public function decrement(int $amount = 1): self
     {
@@ -99,9 +86,6 @@ class Pack
 
     /**
      * Undocumented function
-     *
-     * @param  int  $value
-     * @return int
      */
     public function packsModAmount(int $value): int
     {
@@ -112,8 +96,6 @@ class Pack
 
     /**
      * Undocumented function
-     *
-     * @return int
      */
     public function total(): int
     {
@@ -122,8 +104,6 @@ class Pack
 
     /**
      * Undocumented function
-     *
-     * @return void
      */
     public function toArray(): void
     {

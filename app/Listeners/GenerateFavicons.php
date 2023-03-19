@@ -10,9 +10,6 @@ class GenerateFavicons
 {
     /**
      * Determine whether this event should be handled.
-     *
-     * @param  GlobalSet  $globals
-     * @return bool
      */
     private function shouldHandle(GlobalSet $globals): bool
     {
@@ -22,9 +19,6 @@ class GenerateFavicons
 
     /**
      * Handle the event.
-     *
-     * @param  GlobalSetSaved  $event
-     * @return void
      */
     public function handle(GlobalSetSaved $event): void
     {

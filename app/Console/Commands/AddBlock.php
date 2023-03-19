@@ -52,8 +52,6 @@ class AddBlock extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return bool|null
      */
     public function handle(): int
     {
@@ -77,8 +75,6 @@ class AddBlock extends Command
 
     /**
      * Check if a file doesn't already exist.
-     *
-     * @return bool|null
      */
     protected function checkExistence($type, $path): ?bool
     {
@@ -89,8 +85,6 @@ class AddBlock extends Command
 
     /**
      * Create fieldset.
-     *
-     * @return bool|null
      */
     protected function createFieldset(): ?bool
     {
@@ -103,8 +97,6 @@ class AddBlock extends Command
 
     /**
      * Create partial.
-     *
-     * @return bool|null
      */
     protected function createPartial(): ?bool
     {
@@ -118,8 +110,6 @@ class AddBlock extends Command
 
     /**
      * Update page_builder.yaml.
-     *
-     * @return bool|null
      */
     protected function updatePageBuilder(): ?bool
     {

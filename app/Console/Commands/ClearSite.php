@@ -32,8 +32,6 @@ class ClearSite extends Command
 
     /**
      * Execute the console command.
-     *
-     * @return bool|null
      */
     public function handle(): ?bool
     {
@@ -55,8 +53,6 @@ class ClearSite extends Command
 
     /**
      * Trash all assets.
-     *
-     * @return bool|null
      */
     protected function trashAssets(): ?bool
     {
@@ -69,8 +65,6 @@ class ClearSite extends Command
 
     /**
      * Trash global social media data.
-     *
-     * @return bool|null
      */
     protected function clearGlobalSocialMedia(): ?bool
     {
@@ -80,8 +74,6 @@ class ClearSite extends Command
 
     /**
      * Clear the page builder.
-     *
-     * @return bool|null
      */
     protected function clearPageBuilder($uri): ?bool
     {
@@ -92,8 +84,6 @@ class ClearSite extends Command
 
     /**
      * Trash all pages but home.
-     *
-     * @return bool|null
      */
     protected function trashPagesButHomeAnd404(): ?bool
     {
@@ -113,8 +103,6 @@ class ClearSite extends Command
 
     /**
      * Clear navigation.
-     *
-     * @return bool|null
      */
     protected function clearNavigation(): ?bool
     {

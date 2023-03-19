@@ -21,8 +21,6 @@ class GenerateSocialImages extends Action
 
     /**
      * Determine if the current thing is an entry and if it's opted in to the auto generation config (global).
-     *
-     * @return bool
      */
     public function visibleTo($item): bool
     {
@@ -31,8 +29,6 @@ class GenerateSocialImages extends Action
 
     /**
      * Determine if the current user is allowed to run this action.
-     *
-     * @return bool
      */
     public function authorize($user, $item): bool
     {
@@ -41,8 +37,6 @@ class GenerateSocialImages extends Action
 
     /**
      * Run the action
-     *
-     * @return void
      */
     public function run($items, $values): void
     {
