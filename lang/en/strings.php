@@ -82,4 +82,11 @@ return [
     'widget_assets_explanation' => 'It\'s important to add alt text describing your images. This helps users who depend on assistive technology.',
     'widget_assets_count' => '{0}|{1}You have :amount image that need attention.|[2,*]You have at least :amount images that need attention.',
     'widget_assets_done' => 'All assets have an alt text.',
+
+    "Consent" => "Consent",
+    "Email address" => "E-mail address",
+    "Fax" => "Fax",
+    "I agree that my submitted data is being collected and stored." => "I agree that my submitted data is being collected and stored.",
+    "Message" => "Message",
+    "Name" => "Name",
 ];

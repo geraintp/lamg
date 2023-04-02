@@ -63,4 +63,11 @@ return [
 
     // Other
     'vacancy_visit' => 'Sjå stillingsannonse',
+
+    "Consent" => "Godkjenning",
+    "Email address" => "E-postadresse",
+    "Fax" => "Faks",
+    "I agree that my submitted data is being collected and stored." => "Eg godtek at informasjonen eg oppgjev vert samla inn og lagra.",
+    "Message" => "Melding",
+    "Name" => "Namn",
 ];
