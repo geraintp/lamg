@@ -38,7 +38,7 @@ class GenerateSocialImages extends Action
     /**
      * Run the action
      */
-    public function run($items, $values): void
+    public function run($items, $values): string
     {
         GenerateSocialImagesJob::dispatch($items);
 

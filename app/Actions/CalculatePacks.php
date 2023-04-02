@@ -105,7 +105,7 @@ class Pack
     /**
      * Undocumented function
      */
-    public function toArray(): void
+    public function toArray(): array
     {
         return ['size' => $this->size, 'qty' => $this->qty];
     }
