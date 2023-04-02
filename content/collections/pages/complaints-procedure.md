@@ -1,7 +1,7 @@
 ---
-id: 059d4d8d-fc60-49f8-8823-7da10549e84e
+id: 8cb043b1-6251-4686-9882-8e30484751b9
 blueprint: page
-title: 'Page not found'
+title: 'Complaints Procedure'
 page_builder:
   -
     article:
@@ -12,20 +12,20 @@ page_builder:
         content:
           -
             type: text
-            text: '404 Page not found'
+            text: 'Complaints Procedure'
       -
         type: paragraph
         content:
           -
             type: text
-            text: 'The page you requested is not available.'
+            text: 'LAMG Complaints Procedure...'
     type: article
     enabled: true
-seo_noindex: true
+seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 9549fed7-96c8-4795-8adc-91c7bc086280
-updated_at: 1669405416
+updated_at: 1669405502
 ---

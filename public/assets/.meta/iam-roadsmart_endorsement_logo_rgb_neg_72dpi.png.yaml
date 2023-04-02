@@ -1,6 +1,7 @@
-data: {  }
+data:
+  alt: 'IAM RoadSmart Official Provider'
 size: 9073
-last_modified: 1651602161
+last_modified: 1668805628
 width: 284
 height: 254
 mime_type: image/png

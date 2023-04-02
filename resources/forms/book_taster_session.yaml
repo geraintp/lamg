@@ -1,0 +1,7 @@
+title: 'Book Taster Session'
+email:
+  -
+    to: secretary@lamg.net
+    subject: 'New Taster Session Request'
+    html: email/form_taster_owner
+    text: email/form_taster_owner_text

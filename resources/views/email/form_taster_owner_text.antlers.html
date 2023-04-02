@@ -1,0 +1,25 @@
+{{#
+	@name Form owner text
+	@desc This is the text email template that goes to the owner of the site when a form has been submitted.
+#}}
+
+{{ trans:strings.form_mail_hello }}
+{{ first_name }} {{ last_name }} {{ trans:strings.form_mail_taster_msg }}
+{{ trans:strings.form_mail_closing }}
+{{ trans:strings.form_mail_from }}
+
+-
+{{ fields }}
+{{ if handle !== 'consent' }}
+{{ trans :key="display" :locale="locale" }}:
+{{ if (value | is_array) }}
+{{ value }}
+{{ value }}
+{{ /value }}
+{{ else }}
+{{ value }}
+{{ /if }}
+{{ /if }}
+{{ /fields }}
+-
+{{ trans:strings.form_mail_submitted }} {{ now | timezone | format('r') }}
