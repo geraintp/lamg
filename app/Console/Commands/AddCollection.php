@@ -3,35 +3,35 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Statamic\Console\RunsInPlease;
 use Statamic\Facades\Config;
 use Statamic\Facades\Entry;
 use Statamic\Support\Arr;
-use Symfony\Component\Yaml\Yaml;
 use Stringy\StaticStringy as Stringy;
+use Symfony\Component\Yaml\Yaml;
 
 class AddCollection extends Command
 {
     use RunsInPlease;
 
     /**
-    * The name of the console command.
-    *
-    * @var string
-    */
+     * The name of the console command.
+     *
+     * @var string
+     */
     protected $name = 'peak:add-collection';
 
-     /**
+    /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = "Add a collection.";
+    protected $description = 'Add a collection.';
 
-     /**
+    /**
      * The collection name.
      *
      * @var string
@@ -52,7 +52,7 @@ class AddCollection extends Command
      */
     protected $public = false;
 
-     /**
+    /**
      * The collection route.
      *
      * @var string
@@ -150,12 +150,10 @@ class AddCollection extends Command
      */
     protected $permissions = true;
 
-     /**
+    /**
      * Execute the console command.
-     *
-     * @return bool|null
      */
-    public function handle()
+    public function handle(): int
     {
         $this->collection_name = $this->ask('What should be the name for this collection?');
         $this->filename = Str::slug($this->collection_name, '_');
@@ -190,11 +188,21 @@ class AddCollection extends Command
             $this->createCollection();
             $this->createDirectory("resources/blueprints/collections/{$this->filename}");
             $this->createBlueprint();
-            if ($this->index || $this->show) $this->createDirectory("resources/views/{$this->filename}");
-            if ($this->index) $this->createIndexTemplate();
-            if ($this->index) $this->setIndexTemplate($this->mount);
-            if ($this->show) $this->createShowTemplate();
-            if ($this->permissions) $this->grantPermissionsToEditor();
+            if ($this->index || $this->show) {
+                $this->createDirectory("resources/views/{$this->filename}");
+            }
+            if ($this->index) {
+                $this->createIndexTemplate();
+            }
+            if ($this->index) {
+                $this->setIndexTemplate($this->mount);
+            }
+            if ($this->show) {
+                $this->createShowTemplate();
+            }
+            if ($this->permissions) {
+                $this->grantPermissionsToEditor();
+            }
         } catch (\Exception $e) {
             return $this->error($e->getMessage());
         }
@@ -206,10 +214,8 @@ class AddCollection extends Command
 
     /**
      * Check if a file doesn't already exist.
-     *
-     * @return bool|null
      */
-    protected function checkExistence($type, $path)
+    protected function checkExistence($type, $path): ?bool
     {
         if (File::exists(base_path($path))) {
             throw new \Exception("$type '{$path}' already exists.");
@@ -218,28 +224,23 @@ class AddCollection extends Command
 
     /**
      * Get all pages.
-     *
-     * @return array
      */
-    protected function getPages()
+    protected function getPages(): array
     {
         return Entry::query()
             ->where('collection', 'pages')
             ->where('status', 'published')
             ->orderBy('title', 'asc')
             ->get()
-            ->map(fn($entry) =>
-               "{$entry->get('title')} [{$entry->id()}]"
+            ->map(fn ($entry) => "{$entry->get('title')} [{$entry->id()}]"
             )
             ->toArray();
     }
 
     /**
      * Create fieldset.
-     *
-     * @return bool|null
      */
-    protected function createCollection()
+    protected function createCollection(): ?bool
     {
         $this->checkExistence('Collection', "content/collections/{$this->filename}.yaml");
 
@@ -253,7 +254,7 @@ class AddCollection extends Command
             ->replace('{{ dated }}', ($this->dated) ? 'true' : 'false')
             ->replace('{{ date_past }}', $this->date_past)
             ->replace('{{ date_future }}', $this->date_future)
-            ->replace('{{ template }}', $this->show ? "{$this->filename}/show" : 'default' )
+            ->replace('{{ template }}', $this->show ? "{$this->filename}/show" : 'default')
             ->replace('{{ mount }}', $this->mount);
 
         File::put(base_path("content/collections/{$this->filename}.yaml"), $contents);
@@ -261,10 +262,8 @@ class AddCollection extends Command
 
     /**
      * Create blueprints.
-     *
-     * @return bool|null
      */
-    protected function createBlueprint()
+    protected function createBlueprint(): ?bool
     {
         $this->checkExistence('Blueprint', "resources/blueprints/collections/{$this->filename}/{$this->filename}.yaml");
 
@@ -285,20 +284,16 @@ class AddCollection extends Command
 
     /**
      * Create dir.
-     *
-     * @return bool|null
      */
-    protected function createDirectory($directory)
+    protected function createDirectory($directory): ?bool
     {
         File::makeDirectory($directory);
     }
 
     /**
      * Create index template.
-     *
-     * @return bool|null
      */
-    protected function createIndexTemplate()
+    protected function createIndexTemplate(): ?bool
     {
         $this->checkExistence('Template', "resources/views/{$this->filename}/index.antlers.html");
 
@@ -314,10 +309,8 @@ class AddCollection extends Command
 
     /**
      * Create index template.
-     *
-     * @return bool|null
      */
-    protected function createShowTemplate()
+    protected function createShowTemplate(): ?bool
     {
         $this->checkExistence('Template', "resources/views/{$this->filename}/show.antlers.html");
 
@@ -331,10 +324,8 @@ class AddCollection extends Command
 
     /**
      * Add a page.
-     *
-     * @return string
      */
-    protected function addPage()
+    protected function addPage(): string
     {
         $entry = Entry::make()
             ->collection('pages')
@@ -348,10 +339,8 @@ class AddCollection extends Command
 
     /**
      * Set index template.
-     *
-     * @return bool|null
      */
-    protected function setIndexTemplate($id)
+    protected function setIndexTemplate($id): ?bool
     {
         Entry::find($id)
             ->set('template', "{$this->filename}/index")
@@ -360,10 +349,8 @@ class AddCollection extends Command
 
     /**
      * Grant permissions to editor.
-     *
-     * @return bool|null
      */
-    protected function grantPermissionsToEditor()
+    protected function grantPermissionsToEditor(): ?bool
     {
         $roles = Yaml::parseFile(base_path('resources/users/roles.yaml'));
         $newPermissions = [

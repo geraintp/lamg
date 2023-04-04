@@ -17,25 +17,23 @@ class ClearSite extends Command
     use RunsInPlease;
 
     /**
-    * The name of the console command.
-    *
-    * @var string
-    */
+     * The name of the console command.
+     *
+     * @var string
+     */
     protected $name = 'peak:clear-site';
 
-     /**
+    /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = "Clear all default Peak content.";
+    protected $description = 'Clear all default Peak content.';
 
-     /**
+    /**
      * Execute the console command.
-     *
-     * @return bool|null
      */
-    public function handle()
+    public function handle(): ?bool
     {
         $clear_site = ($this->confirm('Are you sure you want to clear all default Peak content?', true)) ? true : false;
 
@@ -49,29 +47,26 @@ class ClearSite extends Command
             Artisan::call('statamic:glide:clear');
             Artisan::call('cache:clear');
 
-            $this->info("Your view from the peak is clear.");
+            $this->info('Your view from the peak is clear.');
         }
     }
 
     /**
      * Trash all assets.
-     *
-     * @return bool|null
      */
-    protected function trashAssets()
+    protected function trashAssets(): ?bool
     {
         $files = new Filesystem;
         $path = public_path('assets');
-        if ($files->exists($path))
+        if ($files->exists($path)) {
             $files->cleanDirectory($path);
+        }
     }
 
-     /**
+    /**
      * Trash global social media data.
-     *
-     * @return bool|null
      */
-    protected function clearGlobalSocialMedia()
+    protected function clearGlobalSocialMedia(): ?bool
     {
         $set = GlobalSet::findByHandle('social_media');
         $set->inDefaultSite()->set('social_media', null)->save();
@@ -79,10 +74,8 @@ class ClearSite extends Command
 
     /**
      * Clear the page builder.
-     *
-     * @return bool|null
      */
-    protected function clearPageBuilder($uri)
+    protected function clearPageBuilder($uri): ?bool
     {
         Entry::findByUri($uri)
             ->set('page_builder', null)
@@ -91,10 +84,8 @@ class ClearSite extends Command
 
     /**
      * Trash all pages but home.
-     *
-     * @return bool|null
      */
-    protected function trashPagesButHomeAnd404()
+    protected function trashPagesButHomeAnd404(): ?bool
     {
         $pages = Entry::query()
             ->where('collection', 'pages')
@@ -104,17 +95,16 @@ class ClearSite extends Command
 
         foreach ($pages as $page) {
             $file_path = base_path("content/collections/pages/{$page->slug()}.md");
-            if (File::exists($file_path))
+            if (File::exists($file_path)) {
                 File::delete($file_path);
+            }
         }
     }
 
     /**
      * Clear navigation.
-     *
-     * @return bool|null
      */
-    protected function clearNavigation()
+    protected function clearNavigation(): ?bool
     {
         $navigation = Yaml::parseFile(base_path('content/trees/navigation/main.yaml'));
         $tree = Arr::get($navigation, 'tree');
