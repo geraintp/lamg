@@ -109,8 +109,8 @@ task('deploy', [
     'npm:install',
     'npm:run:prod',
 
-    'statamic:stache:clear',
-    'statamic:stache:warm',
+    // 'statamic:stache:clear',
+    // 'statamic:stache:warm',
     
     'fix:perms',
     'deploy:publish',
