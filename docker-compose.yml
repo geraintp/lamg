@@ -1,0 +1,44 @@
+version: '3.7'
+
+services:
+    web:
+        image: geraintp/php:8.1-fpm
+        environment:
+            - VIRTUAL_HOST=lamg.local.amseru.uk
+            - VIRTUAL_PROTO=https
+            - VIRTUAL_PORT=443
+            - CERT_NAME=dev
+        volumes:
+            - '.:/var/www/html'
+            - './.docker/php-overrides.ini:/etc/php/8.1-fpm/cli/conf.d/99-overrides.ini'
+        extra_hosts:
+            - host.docker.internal:host-gateway
+
+    npm:
+        image: node:16-alpine
+        volumes:
+            - '.:/var/www/html'
+        working_dir: /var/www/html
+        entrypoint: ['npm']
+
+    # mysql:
+    #     image: 'mysql:8.0'
+    #     ports:
+    #         - '${FORWARD_DB_PORT:-3306}:3306'
+    #     environment:
+    #         MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+    #         MYSQL_DATABASE: '${DB_DATABASE}'
+    #         MYSQL_USER: '${DB_USERNAME}'
+    #         MYSQL_PASSWORD: '${DB_PASSWORD}'
+    #         MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    #     volumes:
+    #         - 'widgety_db:/var/lib/mysql'
+
+# volumes:
+    # lamg_db:
+    #     driver: local
+
+networks:
+    default:
+        name: local_proxy
+        external: true

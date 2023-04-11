@@ -4,14 +4,16 @@ namespace Deployer;
 require __DIR__ . '/vendor/autoload.php';
 
 require 'recipe/common.php';
-require 'recipe/statamic.php';
-require 'contrib/php-fpm.php';
+require 'recipe/laravel.php';
+// require 'contrib/php-fpm.php';
 require 'contrib/npm.php';
 require 'contrib/slack.php';
 
 // Project name
 set('application', 'lamg');
 set('repository', 'git@github.com:geraintp/lamg.git');
+set('app_path', '/srv/amseru.uk/{{application}}');
+
 set('php_fpm_version', '8.1');
 set('keep_releases', 3);
 
@@ -24,35 +26,45 @@ set('update_code_strategy', 'clone');
 // Shared files/dirs between deploys 
 // add('shared_files', []);
 // add('shared_dirs', []);
+add('writable_dirs', []);
 
 // Writable dirs by web server 
-add('writable_dirs', ['./storage/framework/cache/data/stache/']);
+// add('writable_dirs', ['./storage/framework/cache/data/stache/']);
 set('allow_anonymous_stats', false);
 
 add('copy_dirs', ['./vendors', './node_modules']);
 
-// Hosts
+$port = 37026;
 
-host('prod')
-    ->set('hostname', 'test.amseru.uk')
-    ->set('remote_user', 'root')
-    ->set('deploy_path', '/var/www/test.amseru.uk');    
+// Hosts
+// host('beta')
+//     ->set('hostname', 'amseru.uk')
+//     ->set('remote_user', 'deployer')
+//     ->set('deploy_path', '/var/www/lamg.amseru.uk');    
+
+// Hosts
+host('beta')
+    ->set('hostname', 'amseru.uk')
+    ->set('remote_user', 'deployer')
+    ->set('port', $port)
+    ->set('identity_file', '~/.ssh/deployerkey')
+    ->set('deploy_path', '{{app_path}}'); 
     
 // Tasks
-task('load:env', function() {
-    $environment = run('cat {{deploy_path}}/shared/.env');
+// task('load:env', function() {
+//     $environment = run('cat {{deploy_path}}/shared/.env');
 
-    $env = \Dotenv\Dotenv::parse($environment);
-    var_dump($env['DEPLOY_SLACK_WEB_HOOK']);
-    if (array_key_exists('DEPLOY_SLACK_WEB_HOOK', $env)) {
-        set('slack_webhook', $env['DEPLOY_SLACK_WEB_HOOK']);
-    }
-})->desc('Load DotEnv values');
-before('slack:notify', 'load:env');
+//     $env = \Dotenv\Dotenv::parse($environment);
+//     var_dump($env['DEPLOY_SLACK_WEB_HOOK']);
+//     if (array_key_exists('DEPLOY_SLACK_WEB_HOOK', $env)) {
+//         set('slack_webhook', $env['DEPLOY_SLACK_WEB_HOOK']);
+//     }
+// })->desc('Load DotEnv values');
 
+// before('slack:notify', 'load:env');
 
-task('nginx:restart', function () {
-    run('service nginx restart');
+task('apache:restart', function () {
+    run('service apache restart');
 });
 
 task('npm:install', function(){
@@ -105,8 +117,8 @@ task('deploy', [
     // 'php-fpm:reload',
 ]);
 
-before('deploy', 'slack:notify');
+//before('deploy', 'slack:notify');
 // [Optional] if deploy fails automatically unlock.
 after('deploy:failed', 'deploy:unlock');
-after('deploy:failed', 'slack:notify:failure');
-after('deploy:success', 'slack:notify:success');
+// after('deploy:failed', 'slack:notify:failure');
+// after('deploy:success', 'slack:notify:success');
