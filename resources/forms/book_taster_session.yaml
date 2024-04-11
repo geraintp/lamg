@@ -1,7 +1,8 @@
 title: 'Book Taster Session'
 email:
   -
-    to: secretary@lamg.net
+    id: dDvfROi2
+    to: w.hollingshead@btopenworld.com
     subject: 'New Taster Session Request'
     html: email/form_taster_owner
     text: email/form_taster_owner_text

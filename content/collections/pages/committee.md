@@ -1,9 +1,11 @@
 ---
 id: b1a0e313-94b4-42a6-8d0c-025f72b565c0
+published: false
 blueprint: page
 title: Committee
 page_builder:
   -
+    id: DLrYlbZJ
     article:
       -
         type: heading
@@ -24,6 +26,7 @@ page_builder:
       -
         type: set
         attrs:
+          id: 3CnN35uW
           values:
             type: table
             size: md
@@ -34,10 +37,6 @@ page_builder:
                 cells:
                   - Chair
                   - 'Rod Smith'
-              -
-                cells:
-                  - 'Vice Chair'
-                  - '?'
               -
                 cells:
                   - Secretary
@@ -57,6 +56,8 @@ page_builder:
       -
         type: set
         attrs:
+          id: PqpDBFg5
+          enabled: false
           values:
             type: table
             size: md
@@ -70,7 +71,7 @@ page_builder:
               -
                 cells:
                   - 'Tom Cook'
-                  - 'I.T., Web, Processes'
+                  - 'I.T., Web'
       -
         type: paragraph
       -
@@ -86,6 +87,6 @@ seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 9549fed7-96c8-4795-8adc-91c7bc086280
-updated_at: 1669405179
+updated_by: ef7004f5-3047-461f-b7eb-2691efcd9830
+updated_at: 1683474284
 ---

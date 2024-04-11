@@ -2,7 +2,8 @@ title: 'Contact Us'
 honeypot: fax
 email:
   -
-    to: secretary@lamg.net
-    subject: 'Contact form received'
+    id: 4HZuqJLo
+    to: w.hollingshead@btopenworld.com
+    subject: 'Website Contact Form Received'
     html: email/form_owner
     text: email/form_owner_text

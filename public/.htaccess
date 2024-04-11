@@ -1,3 +1,9 @@
+# Basic Auth Prompt
+#AuthType Basic
+#AuthName "Password Required"
+#Require valid-user
+#AuthUserFile /etc/apache2/.htpasswd
+
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
         Options -MultiViews -Indexes

@@ -2,22 +2,26 @@ title: 'Social media'
 data:
   social_media:
     -
-      handle: groups/1507268706176172
+      id: GPFfFgPQ
+      handle: groups/httplamg.uk.net
       prefix: 'https://www.facebook.com/'
       type: facebook
       enabled: true
     -
+      id: df2aj5Fk
       handle: LAMG_IAM
       prefix: 'https://www.twitter.com/'
       type: twitter
-      enabled: true
+      enabled: false
     -
+      id: JOrOG4XH
       handle: in/robdekort/
       prefix: 'https://www.linkedin.com/'
       type: linkedin
-      enabled: true
+      enabled: false
     -
+      id: gHvZzhTc
       handle: groups/1507268706176172/
       prefix: 'https://www.facebook.com/'
       type: facebook
-      enabled: true
+      enabled: false
