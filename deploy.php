@@ -26,7 +26,7 @@ set('update_code_strategy', 'clone');
 // Shared files/dirs between deploys 
 // add('shared_files', []);
 // add('shared_dirs', []);
-add('writable_dirs', []);
+set('writable_dirs', []);
 
 // Writable dirs by web server 
 // add('writable_dirs', ['./storage/framework/cache/data/stache/']);
@@ -86,9 +86,9 @@ task('npm:cache:clean', function(){
 
 task('fix:perms', function() {
     cd('{{release_or_current_path}}');
-    run('chown -R www-data:www-data .');
+    run('sudo chown -R www-data:www-data .');
     cd('{{release_or_current_path}}/storage');
-    run('chown -R www-data:www-data .');
+    run('sudo chown -R www-data:www-data .');
 });
 
 desc('Show the content of the app directory.');
