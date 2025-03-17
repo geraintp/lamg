@@ -43,12 +43,12 @@ return [
             'container' => 'assets',
             'limit' => 5,
             'expiry' => 0,
-            'width' => 50
+            'width' => 50,
         ],
         [
             'type' => 'collection',
             'collection' => 'pages',
-            'width' => 50
+            'width' => 50,
         ],
     ],
 
@@ -98,7 +98,7 @@ return [
 
     'support_url' => env('STATAMIC_SUPPORT_URL', 'https://www.kaweb.co.uk/support'),
 
-     /*
+    /*
     |--------------------------------------------------------------------------
     | Login Theme
     |--------------------------------------------------------------------------
@@ -125,7 +125,7 @@ return [
 
     'custom_logo_url' => [
         'nav' => env('STATAMIC_CUSTOM_LOGO_NAV_URL', null),
-        'outside' => env('STATAMIC_CUSTOM_LOGO_OUTSIDE_URL', null)
+        'outside' => env('STATAMIC_CUSTOM_LOGO_OUTSIDE_URL', null),
     ],
 
     'custom_favicon_url' => env('STATAMIC_CUSTOM_FAVICON_URL', null),

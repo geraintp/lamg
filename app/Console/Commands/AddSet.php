@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Statamic\Console\RunsInPlease;
 use Statamic\Facades\Config;
 use Statamic\Support\Arr;
@@ -16,39 +16,37 @@ class AddSet extends Command
     use RunsInPlease;
 
     /**
-    * The name of the console command.
-    *
-    * @var string
-    */
+     * The name of the console command.
+     *
+     * @var string
+     */
     protected $name = 'peak:add-set';
 
-     /**
+    /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = "Add an Article (Bard) set.";
+    protected $description = 'Add an Article (Bard) set.';
 
-     /**
+    /**
      * The set name.
      *
      * @var string
      */
     protected $set_name = '';
 
-     /**
+    /**
      * The set filename.
      *
      * @var string
      */
     protected $filename = '';
 
-     /**
+    /**
      * Execute the console command.
-     *
-     * @return bool|null
      */
-    public function handle()
+    public function handle(): int
     {
         $this->set_name = $this->ask('What should be the name for this set?');
         $this->filename = Stringy::slugify($this->set_name, '_', Config::getShortLocale());
@@ -69,10 +67,8 @@ class AddSet extends Command
 
     /**
      * Check if a file doesn't already exist.
-     *
-     * @return bool|null
      */
-    protected function checkExistence($type, $path)
+    protected function checkExistence($type, $path): ?bool
     {
         if (File::exists(base_path($path))) {
             throw new \Exception("{$type} '{$path}' already exists.");
@@ -81,10 +77,8 @@ class AddSet extends Command
 
     /**
      * Create fieldset.
-     *
-     * @return bool|null
      */
-    protected function createFieldset()
+    protected function createFieldset(): ?bool
     {
         $stub = File::get(__DIR__.'/stubs/fieldset_set.yaml.stub');
         $contents = Str::of($stub)
@@ -95,10 +89,8 @@ class AddSet extends Command
 
     /**
      * Create partial.
-     *
-     * @return bool|null
      */
-    protected function createPartial()
+    protected function createPartial(): ?bool
     {
         $stub = File::get(__DIR__.'/stubs/set.html.stub');
         $contents = Str::of($stub)
@@ -110,19 +102,17 @@ class AddSet extends Command
 
     /**
      * Update page_builder.yaml.
-     *
-     * @return bool|null
      */
-    protected function updatePageBuilder()
+    protected function updatePageBuilder(): ?bool
     {
         $fieldset = Yaml::parseFile(base_path('resources/fieldsets/article.yaml'));
         $newSet = [
             'display' => $this->set_name,
             'fields' => [
                 [
-                    'import' => $this->filename
-                ]
-            ]
+                    'import' => $this->filename,
+                ],
+            ],
         ];
 
         $existingSets = Arr::get($fieldset, 'fields.0.field.sets');
