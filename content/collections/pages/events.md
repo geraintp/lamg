@@ -8,9 +8,10 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: 9549fed7-96c8-4795-8adc-91c7bc086280
-updated_at: 1668879630
+updated_at: 1746382402
 page_builder:
   -
+    id: 4SaEd5A0
     article:
       -
         type: heading
@@ -53,7 +54,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Every month we have a mid-month run; a group ride for full members (+ associate members with consent from their observer) to take in the vistas England has to offer (rain or shine!). The destinations may be familiar, but the routes to get there and back won''t be! Our ride-outs team aim to provide a motorcycle-friendly route on each run: save the highways for the cars!'
+            text: "Every month we have a mid-month run; a group ride for full members (+ associate members with consent from their observer) to take in the vistas England has to offer (rain or shine!). The destinations may be familiar, but the routes to get there and back won't be! Our ride-outs team aim to provide a motorcycle-friendly route on each run: save the highways for the cars!"
       -
         type: heading
         attrs:
@@ -67,21 +68,7 @@ page_builder:
         content:
           -
             type: text
-            text: 'Depending on the time of the year, we will operate a weekly observed ride event, provided by our training team and typically hosted/started from McDonald''s at Wall Island, Lichfield. During BST, we operate on Monday evenings; during GMT we operate on Saturday mornings. New and existing members are welcome to attend these events to further their progression - never stop learning! '
-      -
-        type: heading
-        attrs:
-          level: 3
-        content:
-          -
-            type: text
-            text: 'Staffordshire Biker Breakfasts'
-      -
-        type: paragraph
-        content:
-          -
-            type: text
-            text: 'During the riding season, we work alongside Staffordshire Safer Roads Partnership at the Biker Breakfast events throughout Staffordshire. These are extremely popular events with plenty of vendors and things to see and do. '
+            text: "Depending on the time of the year, we will operate a weekly observed ride event, provided by our training team and typically hosted/started from McDonald's at Wall Island, Lichfield. During BST, we operate on Monday evenings; during GMT we operate on Saturday mornings. New and existing members are welcome to attend these events to further their progression - never stop learning!"
       -
         type: heading
         attrs:
