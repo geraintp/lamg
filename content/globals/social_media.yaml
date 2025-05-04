@@ -8,20 +8,20 @@ data:
       type: facebook
       enabled: true
     -
+      id: maa0pz2q
+      handle: lamg_iam/
+      prefix: 'https://www.instagram.com/'
+      type: instagram
+      enabled: true
+    -
       id: df2aj5Fk
       handle: LAMG_IAM
       prefix: 'https://www.twitter.com/'
       type: twitter
-      enabled: false
+      enabled: true
     -
       id: JOrOG4XH
-      handle: in/robdekort/
+      handle: in/lichfield-advance-motorcyclists-group-8359a2119/
       prefix: 'https://www.linkedin.com/'
       type: linkedin
-      enabled: false
-    -
-      id: gHvZzhTc
-      handle: groups/1507268706176172/
-      prefix: 'https://www.facebook.com/'
-      type: facebook
-      enabled: false
+      enabled: true
