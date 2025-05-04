@@ -1,12 +1,13 @@
 title: SEO
 data:
   title_separator: '|'
-  site_name: 'Lichfield Advanced Motorcycle Group'
+  site_name: 'Lichfield Advanced Motorcyclists Group'
   noindex_local: true
   noindex_staging: true
   noindex_production: false
   collection_defaults:
     -
+      id: ampjrwbD
       collection: pages
       fallback: custom_text
       custom_text: |-
@@ -14,7 +15,7 @@ data:
         The oldest, biggest and best "Advanced Group" in Lichfield.
   hreflang_auto: true
   json_ld_type: organization
-  organization_name: 'Lichfield Advances Motorcycle Group'
+  organization_name: 'Lichfield Advanced Motorcyclists Group'
   breadcrumbs: true
   use_social_image_generation: false
   twitter_handle: LAMG_IAM
