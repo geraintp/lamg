@@ -1,0 +1,184 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: personal_details
+        field:
+          display: 'Personal Details'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: full_name
+        field:
+          input_type: text
+          character_limit: 100
+          antlers: false
+          display: 'Full Name'
+          type: text
+          icon: text
+          instructions: 'Please provide your full name'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - required
+            - string
+      -
+        handle: email_address
+        field:
+          input_type: email
+          antlers: false
+          display: 'Email Address'
+          type: text
+          icon: text
+          instructions: 'Please provide your current email address'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - required
+            - email
+          width: 50
+      -
+        handle: phone_number
+        field:
+          input_type: text
+          character_limit: 13
+          antlers: false
+          display: 'Phone Number'
+          type: text
+          icon: text
+          instructions: 'Please provide a contact telephone number'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - alpha_num
+          width: 50
+      -
+        handle: postal_address
+        field:
+          antlers: false
+          display: 'Postal Address'
+          type: textarea
+          icon: textarea
+          instructions: 'Please provide your postal address'
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - string
+          width: 50
+      -
+        handle: request_details
+        field:
+          display: 'Request Details'
+          type: section
+          icon: section
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+      -
+        handle: type_of_request
+        field:
+          inline: false
+          options:
+            access_personal_data: 'Access to Personal Data'
+            rectification_of_data: 'Rectification of Data'
+            erasure_of_data: 'Erasure of Data ("right to be forgotten")'
+            restriction_of_processing: 'Restriction of Processing'
+            objection_to_processing: 'Objection to Processing'
+            data_portability: 'Data portability'
+            withdrawal_of_consent: 'Withdrawal of consent'
+            complaint_or_other: 'Complaint or other'
+          display: 'Type of Request'
+          type: checkboxes
+          icon: checkboxes
+          instructions: 'Select all that apply'
+          width: 50
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - required
+      -
+        handle: details_of_the_request
+        field:
+          antlers: false
+          display: 'Details of the Request'
+          type: textarea
+          icon: textarea
+          instructions: 'Please provide a description or explanation of the request'
+          width: 50
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - required
+      -
+        handle: proof_of_id
+        field:
+          mode: list
+          container: gdpr_requests
+          restrict: true
+          allow_uploads: true
+          show_filename: true
+          display: 'Proof of ID'
+          type: assets
+          icon: assets
+          instructions: 'Please provide a government-issued ID or other acceptable verification'
+          width: 75
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - required
+      -
+        handle: are_you_the_data_subject
+        field:
+          options:
+            'yes': 'Yes'
+            'no': 'No (I am authorised on their behalf)'
+          inline: false
+          cast_booleans: false
+          display: 'Are you the data subject?'
+          type: radio
+          icon: radio
+          width: 50
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - required
+            - 'in:yes,no'
+      -
+        handle: date
+        field:
+          input_type: date
+          antlers: false
+          default: now
+          display: Date
+          type: text
+          icon: text
+          width: 50
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+          always_save: false
+          validate:
+            - required
+            - date

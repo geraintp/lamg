@@ -1592,7 +1592,24 @@ page_builder:
             marks:
               -
                 type: bold
-            text: lichfieldadvanced@gmail.com
+            text: 'lichfieldadvanced@gmail.com '
+          -
+            type: text
+            text: 'or using our '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'statamic://entry::c99e117d-4ba8-4c37-9748-5e5b9249e0df'
+                  rel: null
+                  target: null
+                  title: null
+            text: 'web form'
+          -
+            type: text
+            text: .
       -
         type: heading
         attrs:
@@ -1794,6 +1811,20 @@ page_builder:
               -
                 type: bold
             text: lichfieldadvanced@gmail.com
+          -
+            type: text
+            text: ' or use our '
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'statamic://entry::c99e117d-4ba8-4c37-9748-5e5b9249e0df'
+                  rel: null
+                  target: null
+                  title: null
+            text: 'web form'
       -
         type: paragraph
         content:
@@ -1856,8 +1887,8 @@ page_builder:
               -
                 type: link
                 attrs:
-                  href: '#'
-                  rel: noopener
+                  href: 'statamic://entry::64f2bbcb-c7b1-4901-ae2a-a310c3967035'
+                  rel: null
                   target: null
                   title: null
             text: 'Cookie Policy'
@@ -1958,6 +1989,24 @@ page_builder:
               -
                 type: bold
             text: '07711 648580'
+          -
+            type: hard_break
+            marks:
+              -
+                type: bold
+          -
+            type: text
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'statamic://entry::c99e117d-4ba8-4c37-9748-5e5b9249e0df'
+                  rel: null
+                  target: null
+                  title: null
+              -
+                type: bold
+            text: 'GDPR Request Form'
     type: article
     enabled: true
 seo_noindex: true
@@ -1967,5 +2016,5 @@ sitemap_change_frequency: never
 sitemap_priority: 0.5
 parent: d9ae806c-6d41-4382-99cb-ad7beb37f4f1
 updated_by: 9549fed7-96c8-4795-8adc-91c7bc086280
-updated_at: 1746387617
+updated_at: 1746392514
 ---
