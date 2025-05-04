@@ -4,6 +4,7 @@ blueprint: page
 title: 'Privacy Policy'
 page_builder:
   -
+    id: KeN1UyYU
     article:
       -
         type: paragraph
@@ -112,11 +113,11 @@ page_builder:
                       -
                         type: link
                         attrs:
-                          href: 'http://www.lamg.uk.net'
+                          href: 'https://www.lichfieldadvancedmotorcyclists.co.uk'
                           rel: null
                           target: null
                           title: null
-                    text: 'http://www.lamg.uk.net'
+                    text: 'https://www.lichfieldadvancedmotorcyclists.co.uk'
                   -
                     type: text
                     text: "\_, or any website of ours that links to this privacy notice"
@@ -150,11 +151,13 @@ page_builder:
               -
                 type: link
                 attrs:
-                  href: 'mailto:dpo@lamg.net'
+                  href: 'mailto:lichfieldadvanced@gmail.com'
                   rel: null
                   target: null
-                  title: null
-            text: dpo@lamg.net
+                  title: lichfieldadvanced@gmail.com
+              -
+                type: bold
+            text: lichfieldadvanced@gmail.com
           -
             type: text
             text: .
@@ -1087,7 +1090,7 @@ page_builder:
                     marks:
                       -
                         type: bold
-                    text: 'To save or protect an individual''s vital interest.'
+                    text: "To save or protect an individual's vital interest."
                   -
                     type: text
                     text: "\_We may process your information when necessary to save or protect an individual’s vital interest, such as to prevent harm."
@@ -2243,25 +2246,23 @@ page_builder:
         content:
           -
             type: text
-            text: "If you have questions or comments about this notice, you may\_email us at\_dpo@lamg.net\_\_or by post to:"
-      -
-        type: paragraph
-        content:
+            text: "If you have questions or comments about this notice, you may\_email us at\_"
           -
             type: text
-            text: __________
-      -
-        type: paragraph
-        content:
+            marks:
+              -
+                type: link
+                attrs:
+                  href: 'mailto:lichfieldadvanced@gmail.com'
+                  rel: null
+                  target: null
+                  title: lichfieldadvanced@gmail.com
+              -
+                type: bold
+            text: lichfieldadvanced@gmail.com
           -
             type: text
-            text: __________
-      -
-        type: paragraph
-        content:
-          -
-            type: text
-            text: __________
+            text: .
       -
         type: paragraph
       -
@@ -2285,8 +2286,8 @@ page_builder:
               -
                 type: link
                 attrs:
-                  href: 'https://app.termly.io/notify/a4a70ee0-b4c6-4063-a2da-6f0cd213a263'
-                  rel: 'noopener noreferrer'
+                  href: 'statamic://entry::5c526dbf-9dd7-4c52-98d8-54e00ebddfb6'
+                  rel: null
                   target: _blank
                   title: null
             text: here
@@ -2300,6 +2301,6 @@ seo_nofollow: false
 seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
-updated_by: 9549fed7-96c8-4795-8adc-91c7bc086280
-updated_at: 1668899390
+updated_by: ef7004f5-3047-461f-b7eb-2691efcd9830
+updated_at: 1746371244
 ---

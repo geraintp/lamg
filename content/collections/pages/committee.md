@@ -31,12 +31,16 @@ page_builder:
             type: table
             size: md
             first_row_headers: false
-            first_column_headers: true
+            first_column_headers: false
             table:
               -
                 cells:
                   - Chair
-                  - 'Rod Smith'
+                  - 'Tom Cook'
+              -
+                cells:
+                  - 'Vice Chair'
+                  - 'Mike Webb'
               -
                 cells:
                   - Secretary
@@ -57,21 +61,36 @@ page_builder:
         type: set
         attrs:
           id: PqpDBFg5
-          enabled: false
           values:
             type: table
             size: md
-            first_row_headers: true
+            first_row_headers: false
             first_column_headers: false
             table:
               -
                 cells:
-                  - Name
-                  - Role(s)
+                  - 'Jack Amberton'
               -
                 cells:
-                  - 'Tom Cook'
-                  - 'I.T., Web'
+                  - 'Russell Bowen'
+              -
+                cells:
+                  - 'Rod Smith'
+              -
+                cells:
+                  - 'Danni Gregory'
+              -
+                cells:
+                  - 'Mark Lucas'
+              -
+                cells:
+                  - 'Paul Ward-Trickett'
+              -
+                cells:
+                  - 'Lynne Standring'
+              -
+                cells:
+                  - 'Tim Standring'
       -
         type: paragraph
       -
@@ -88,5 +107,5 @@ seo_canonical_type: entry
 sitemap_change_frequency: weekly
 sitemap_priority: 0.5
 updated_by: ef7004f5-3047-461f-b7eb-2691efcd9830
-updated_at: 1683474284
+updated_at: 1746370314
 ---

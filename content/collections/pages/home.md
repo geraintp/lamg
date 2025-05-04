@@ -3,7 +3,7 @@ id: home
 blueprint: page
 title: Home
 updated_by: ef7004f5-3047-461f-b7eb-2691efcd9830
-updated_at: 1683479678
+updated_at: 1741955470
 seo_noindex: false
 seo_nofollow: false
 seo_canonical_type: entry
@@ -28,7 +28,7 @@ page_builder:
             type: text
             text: 'Our website is still under construction, please bear with us, thanks!'
     type: article
-    enabled: true
+    enabled: false
   -
     id: k897nXtS
     article:
