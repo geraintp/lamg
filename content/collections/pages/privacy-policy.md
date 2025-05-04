@@ -1960,12 +1960,12 @@ page_builder:
             text: '07711 648580'
     type: article
     enabled: true
-seo_noindex: false
-seo_nofollow: false
+seo_noindex: true
+seo_nofollow: true
 seo_canonical_type: entry
-sitemap_change_frequency: weekly
+sitemap_change_frequency: never
 sitemap_priority: 0.5
 parent: d9ae806c-6d41-4382-99cb-ad7beb37f4f1
-updated_by: ef7004f5-3047-461f-b7eb-2691efcd9830
-updated_at: 1746386436
+updated_by: 9549fed7-96c8-4795-8adc-91c7bc086280
+updated_at: 1746387617
 ---

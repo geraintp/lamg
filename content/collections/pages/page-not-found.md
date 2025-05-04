@@ -4,6 +4,7 @@ blueprint: page
 title: 'Page not found'
 page_builder:
   -
+    id: 9adhDKcE
     article:
       -
         type: heading
@@ -22,10 +23,10 @@ page_builder:
     type: article
     enabled: true
 seo_noindex: true
-seo_nofollow: false
+seo_nofollow: true
 seo_canonical_type: entry
-sitemap_change_frequency: weekly
+sitemap_change_frequency: never
 sitemap_priority: 0.5
 updated_by: 9549fed7-96c8-4795-8adc-91c7bc086280
-updated_at: 1669405416
+updated_at: 1746387485
 ---

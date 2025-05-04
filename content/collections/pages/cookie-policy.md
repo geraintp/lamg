@@ -114,38 +114,35 @@ page_builder:
             type: text
             text: '3. Types of Cookies We Use'
       -
-        type: paragraph
-        content:
-          -
-            type: text
-            text: 'Cookie TypePurposeDuration'
-          -
-            type: text
-            marks:
+        type: set
+        attrs:
+          id: maa1u92f
+          values:
+            type: table
+            size: lg
+            first_row_headers: true
+            first_column_headers: false
+            table:
               -
-                type: bold
-            text: 'Strictly Necessary Cookies'
-          -
-            type: text
-            text: 'Required for basic website functionality (e.g. navigation, page access)Session / Short-term'
-          -
-            type: text
-            marks:
+                cells:
+                  - 'Cookie Type'
+                  - Purpose
+                  - Duration
               -
-                type: bold
-            text: 'Performance/Analytics Cookies'
-          -
-            type: text
-            text: 'Help us understand how users interact with our site (e.g. Google Analytics)Up to 2 years'
-          -
-            type: text
-            marks:
+                cells:
+                  - 'Strictly Necessary Cookies'
+                  - 'Required for basic website functionality (e.g. navigation, page access)'
+                  - 'Session / Short-term'
               -
-                type: bold
-            text: 'Functionality Cookies'
-          -
-            type: text
-            text: 'Remember your preferences (e.g. cookie consent choice)Up to 1 year'
+                cells:
+                  - 'Performance/Analytics Cookies'
+                  - 'Help us understand how users interact with our site (e.g. Google Analytics)'
+                  - 'Up to 2 years'
+              -
+                cells:
+                  - 'Functionality Cookies'
+                  - 'Remember your preferences (e.g. cookie consent choice)'
+                  - 'Up to 1 year'
       -
         type: heading
         attrs:
@@ -388,12 +385,12 @@ page_builder:
             text: '07711 648580'
     type: article
     enabled: true
-seo_noindex: false
-seo_nofollow: false
+seo_noindex: true
+seo_nofollow: true
 seo_canonical_type: entry
-sitemap_change_frequency: weekly
+sitemap_change_frequency: never
 sitemap_priority: 0.5
 parent: d9ae806c-6d41-4382-99cb-ad7beb37f4f1
-updated_by: ef7004f5-3047-461f-b7eb-2691efcd9830
-updated_at: 1746386572
+updated_by: 9549fed7-96c8-4795-8adc-91c7bc086280
+updated_at: 1746387369
 ---
