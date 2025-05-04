@@ -23,11 +23,8 @@ data:
     - pages
   trackers_local: false
   trackers_staging: false
-  trackers_production: true
+  trackers_production: false
   use_google_site_verification: false
   use_fathom: false
-  fathom_use_custom_domain: false
   use_cloudflare_web_analytics: false
   tracker_type: none
-  anonymize_ip: false
-  use_cookie_banner: false
