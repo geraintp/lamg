@@ -77,6 +77,9 @@ return [
                 'log',
             ],
         ],
+        'mailjet-api' => [
+            'transport' => 'mailjet-api'
+        ],
     ],
 
     /*

@@ -15,6 +15,7 @@
         "laravel/framework": "^9.0",
         "laravel/sanctum": "^2.14",
         "laravel/tinker": "^2.7",
+        "mailjet/mailjet-apiv3-php": "^1.5",
         "statamic/cms": "3.3.68"
     },
     "require-dev": {

@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Mail\MailjetTransport;
+use Illuminate\Mail\MailManager;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Statamic\Statamic;
@@ -37,6 +39,13 @@ class AppServiceProvider extends ServiceProvider
                 $entry = GlobalSet::find('configuration')->inCurrentSite()->error_404_entry;
                 $view->with($entry->toAugmentedArray());
             }
+        });
+
+        app(MailManager::class)->extend('mailjet-api', function () {
+            $key = config('services.mailjet.key');
+            $secret = config('services.mailjet.secret');
+    
+            return new MailjetTransport($key, $secret);
         });
     }
 }
