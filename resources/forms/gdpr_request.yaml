@@ -1,2 +1,7 @@
 title: 'GDPR Request'
 honeypot: lemon
+email:
+  -
+    id: mahbomn9
+    to: tlcook@outlook.com
+    subject: 'GDPR Request Received'
