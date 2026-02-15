@@ -17,8 +17,9 @@ class MountUrl extends Tags
         /*
         * Get the collection name from the tag
         */
-        $collectionName  = $this->params->get('from');
+        $collectionName = $this->params->get('from');
         $collection = Collection::findByHandle($collectionName);
-        return ($collection)? $collection->url() : null;
+
+        return ($collection) ? $collection->url() : null;
     }
 }

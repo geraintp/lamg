@@ -37,7 +37,7 @@ return [
             'driver' => 'file',
             'path' => public_path('static'),
             'lock_hold_length' => 0,
-            'warm_concurrency' => 10
+            'warm_concurrency' => 10,
         ],
 
     ],
@@ -54,7 +54,7 @@ return [
     */
 
     'exclude' => [
-        '/sitemap.xml'
+        '/sitemap.xml',
     ],
 
     /*
@@ -77,7 +77,6 @@ return [
         'rules' => 'all',
 
     ],
-
 
     /*
     |--------------------------------------------------------------------------

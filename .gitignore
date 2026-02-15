@@ -9,7 +9,7 @@
 /vendor
 .env
 .env.backup
-.phpunit.result.cache
+/.phpunit.cache
 .antlers.json
 Homestead.json
 Homestead.yaml
@@ -21,3 +21,4 @@ yarn-error.log
 /public/js/*
 /public/css/*
 /public/mix-manifest.json
+/cache/*

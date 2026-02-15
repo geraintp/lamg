@@ -3,14 +3,12 @@
 namespace App\Jobs;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 use Spatie\Browsershot\Browsershot;
 use Statamic\Facades\AssetContainer;
 
@@ -32,13 +30,10 @@ class GenerateSocialImagesJob implements ShouldQueue
 
     /**
      * Execute the job.
-     *
-     * @return void
      */
-    public function handle()
+    public function handle(): void
     {
-        $this->items->each(function($item, $key) {
-
+        $this->items->each(function ($item, $key) {
             $container = AssetContainer::find('social_images');
             $disk = $container->disk();
 
@@ -49,7 +44,7 @@ class GenerateSocialImagesJob implements ShouldQueue
             ])
             ->filter()
             ->each(function ($image) use ($container) {
-                if($container->asset($image)->exists()){
+                if ($container->asset($image)->exists()) {
                     $container->asset($image)->delete();
                 }
             });
