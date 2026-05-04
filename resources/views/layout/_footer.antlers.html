@@ -25,14 +25,37 @@
             </div>
 
             <div>
-                <h3 class="p-0 m-0 mb-8 font-sans text-md font-medium uppercase leading-4 text-left text-primary">Contact info</h3>
-                <p class="p-0 pb-4 m-0 font-sans text-xs font-medium leading-6 text-stone-500">Phone: <a href="tel:07711648580" class='hover:text-primary'>07711 648580</a></p>
-                <p class="p-0 m-0 font-sans text-xs font-medium leading-6 text-stone-500"><a href="mailto:w.hollingshead@btopenworld.com" class='hover:text-primary'>w.hollingshead@btopenworld.com</a></p>
+                <h3 class="p-0 m-0 mb-8 font-sans text-md font-medium uppercase leading-4 text-left text-primary">Useful Links</h3>
+                <ul class="p-0 m-0 space-y-2">
+                    {{ nav:footer_nav }}
+                        <li class="list-none">
+                            <a href="{{ url }}" class="font-sans text-xs font-medium leading-6 text-stone-500 hover:text-primary">{{ title }}</a>
+                        </li>
+                    {{ /nav:footer_nav }}
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="p-0 m-0 mb-8 font-sans text-md font-medium uppercase leading-4 text-left text-primary">Newsletter</h3>
+                {{ if configuration:footer_contact_number }}
+                <p class="p-0 pb-4 m-0 font-sans text-xs font-medium leading-6 text-stone-500">Phone: <a href="tel:{{ configuration:footer_contact_number | spaceless }}" class='hover:text-primary'>{{ configuration:footer_contact_number }}</a></p>
+                {{ /if }}
+                {{ if configuration:footer_contact_email }}
+                <p class="p-0 m-0 font-sans text-xs font-medium leading-6 text-stone-500"><a href="mailto:{{ configuration:footer_contact_email }}" class='hover:text-primary'>{{ configuration:footer_contact_email }}</a></p>
+                {{ /if }}
             </div>
 
             {{ if social_media:social_media }}
-            <div>
+            <div >
                 <h3 class="p-0 m-0 mb-8 font-sans text-md font-medium uppercase leading-4 text-left text-primary">Connect with us</h3>
+                <div class="flex flex-col space-y-2 mb-4">
+                    {{ if configuration:footer_contact_number }}
+                        <p class="p-0 m-0 font-sans text-xs font-medium text-stone-500">Phone: <a href="tel:{{ configuration:footer_contact_number }}" class='hover:text-primary'>{{ configuration:footer_contact_number }}</a></p>
+                    {{ /if }}
+                    {{ if configuration:footer_contact_email }}
+                        <p class="p-0 m-0 font-sans text-xs font-medium text-stone-500"><a href="mailto:{{ configuration:footer_contact_email }}" class='hover:text-primary'>{{ configuration:footer_contact_email }}</a></p>
+                    {{ /if }}
+                </div>
                 <div class="flex space-x-2">
                     {{ social_media:social_media }}
                         <a class="p-1 -m-1 text-neutral hover:text-primary focus:outline-none focus-visible:ring-2 ring-primary" href="{{ prefix }}{{ handle }}" rel="noopener" aria-label="{{ config:app:name }} {{ trans:strings.on }} {{ type | title }}" target="_blank">{{ svg :src="type" class="w-3 h-3 overflow-visible fill-current" alt="" aria-hidden="true" }}</a>
