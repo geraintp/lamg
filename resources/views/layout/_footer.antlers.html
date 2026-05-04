@@ -32,12 +32,13 @@
                             <a href="{{ url }}" class="font-sans text-xs font-medium leading-6 text-stone-500 hover:text-primary">{{ title }}</a>
                         </li>
                     {{ /nav:footer_nav }}
+                </ul>
             </div>
 
             <div>
                 <h3 class="p-0 m-0 mb-8 font-sans text-md font-medium uppercase leading-4 text-left text-primary">Newsletter</h3>
                 {{ if configuration:footer_contact_number }}
-                <p class="p-0 pb-4 m-0 font-sans text-xs font-medium leading-6 text-stone-500">Phone: <a href="tel:{{ configuration:footer_contact_number }}" class='hover:text-primary'>{{ configuration:footer_contact_number }}</a></p>
+                <p class="p-0 pb-4 m-0 font-sans text-xs font-medium leading-6 text-stone-500">Phone: <a href="tel:{{ configuration:footer_contact_number | spaceless }}" class='hover:text-primary'>{{ configuration:footer_contact_number }}</a></p>
                 {{ /if }}
                 {{ if configuration:footer_contact_email }}
                 <p class="p-0 m-0 font-sans text-xs font-medium leading-6 text-stone-500"><a href="mailto:{{ configuration:footer_contact_email }}" class='hover:text-primary'>{{ configuration:footer_contact_email }}</a></p>

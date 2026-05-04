@@ -53,7 +53,7 @@ tabs:
               antlers: false
               display: 'Copyright name'
               type: text
-              instructions: 'Falls back to the applicaton name.'
+              instructions: 'Falls back to the application name.'
               width: 50
               listable: hidden
               instructions_position: above
@@ -134,12 +134,15 @@ tabs:
           -
             handle: footer_contact_email
             field:
-              input_type: text
+              input_type: email
               antlers: false
               type: text
               display: 'Contact Email'
+              instructions: 'Enter a valid email address.'
               listable: hidden
               instructions_position: above
               visibility: visible
               replicator_preview: true
               hide_display: false
+              validate:
+                - email
